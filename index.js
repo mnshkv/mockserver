@@ -23,6 +23,8 @@ app.get('*', (req, res) => {
       ...data[params.pathname],
       on: params.query.on == 1 ? true : false,
     }
+
+    return res.json({ endpoint: data[params.pathname].on ? "on" : "off" })
   }
 
   console.log(data)
